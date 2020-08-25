@@ -1,0 +1,2 @@
+# websockSample
+这是一个即时通知的例子，所有websocket订阅一个queue,消息可以通过rabbitmq，支持百万级别的连接
