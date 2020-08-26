@@ -9,6 +9,6 @@ go build
 ./websocketSample 
 
 运行client端  
-cd clientSample && go build   
-./clientSample -n 2000    
-2000表示请求连接的数量
+cd clientSample  
+go build   
+./clientSample -n 2000    2000表示请求连接的数量
