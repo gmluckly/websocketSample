@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"github.com/mailru/easygo/netpoll"
 	"log"
@@ -20,12 +19,6 @@ func main() {
 		log.Println(http.ListenAndServe(":10000", nil))
 	}()
 
-	var poolNum int
-	flag.IntVar(&poolNum, "n", 5000, "")
-	flag.Parse()
-
-	fmt.Println("goroutine count:", poolNum)
-
 	go Manager.Start()
 	var err error
 	poller, err = netpoll.New(nil)
@@ -33,6 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	poolNum := 100
 	pool = NewPool(poolNum, poolNum, 50)
 
 	go IntiWsNotifyConsumer()
