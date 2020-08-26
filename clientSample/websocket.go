@@ -92,6 +92,5 @@ func hearBeat(c *websocket.Conn, second int) {
 	if err != nil {
 		fmt.Println("data transaction to json err:", err)
 	}
-	c.WriteMessage()
 	c.WriteMessage(1, bytesData)
 }
