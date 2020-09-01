@@ -22,7 +22,7 @@ func main() {
 	go Manager.Start()
 	var err error
 	poller, err = netpoll.New(nil)
-	fmt.Println("poller:", poller)
+	//fmt.Println("poller:", poller)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/streadway/amqp"
-	//"ilikereader.com/link_target_pool_system/websocket"
-	"log"
 )
 
 func IntiWsNotifyConsumer() {
@@ -55,7 +53,8 @@ func IntiWsNotifyConsumer() {
 
 func failOnErr(err error, msg string) {
 	if err != nil {
-		log.Fatal("msg:%s,err:%s", msg, err)
+		//log.Fatal("msg:%s,err:", msg, err)
+		fmt.Println("err:",err,"msg:",msg)
 		panic(err)
 	}
 }
